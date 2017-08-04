@@ -135,6 +135,7 @@ var exitTimer = setTimeout(function() {
 
 var getHandler = function(filename) {
     var exported = require(filename);
+    return exported.handler;
     for (var property in exported) {
         if (exported.hasOwnProperty(property) && typeof(exported[property]) === 'function') {
             return exported[property];
